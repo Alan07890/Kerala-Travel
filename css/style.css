@@ -256,6 +256,7 @@ button, input, select {
 .hero-image {
   position: absolute;
   inset: 0;
+  background-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Munnar_tea_plantations.jpg?width=1600");
   background-size: cover;
   background-position: center;
   transform: scale(1.05);
@@ -704,9 +705,10 @@ button, input, select {
   border-radius: var(--radius-lg);
   overflow: hidden;
   aspect-ratio: 4 / 5;
-  background: var(--c-ink);
+  background: linear-gradient(145deg, #0f766e, #134e4a);
   box-shadow: var(--shadow-sm);
   transition: all var(--normal) var(--ease);
+  min-height: 320px;
 }
 
 .district-card:hover {
@@ -1029,18 +1031,27 @@ button, input, select {
 }
 
 .exp-nature {
-  background-image: linear-gradient(rgba(15, 23, 42, 0.3), rgba(15, 23, 42, 0.3)),
+  background-color: #0f766e;
+  background-image: linear-gradient(180deg, rgba(15, 23, 42, 0.2) 0%, rgba(15, 23, 42, 0.85) 100%),
     url("https://commons.wikimedia.org/wiki/Special:FilePath/Munnar_tea_plantations.jpg?width=900");
+  background-size: cover;
+  background-position: center;
 }
 
 .exp-food {
-  background-image: linear-gradient(rgba(15, 23, 42, 0.3), rgba(15, 23, 42, 0.3)),
+  background-color: #c2410c;
+  background-image: linear-gradient(180deg, rgba(15, 23, 42, 0.2) 0%, rgba(15, 23, 42, 0.85) 100%),
     url("https://commons.wikimedia.org/wiki/Special:FilePath/Onam_Sadya.jpg?width=900");
+  background-size: cover;
+  background-position: center;
 }
 
 .exp-heritage {
-  background-image: linear-gradient(rgba(15, 23, 42, 0.3), rgba(15, 23, 42, 0.3)),
+  background-color: #1e3a5f;
+  background-image: linear-gradient(180deg, rgba(15, 23, 42, 0.2) 0%, rgba(15, 23, 42, 0.85) 100%),
     url("https://commons.wikimedia.org/wiki/Special:FilePath/Kathakali_Performer.jpg?width=900");
+  background-size: cover;
+  background-position: center;
 }
 
 /* --- Culture Strip --- */
@@ -1052,6 +1063,7 @@ button, input, select {
 }
 
 .culture-photo {
+  background-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Kathakali_Performer.jpg?width=1200");
   background-size: cover;
   background-position: center;
   min-height: 360px;
@@ -1545,14 +1557,14 @@ button, input, select {
   border-radius: 999px;
 }
 
-/* Reveal animations */
+/* Reveal animations (JS adds .is-visible) */
 [data-reveal] {
   opacity: 0;
   transform: translateY(24px);
   transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
 }
 
-[data-reveal].revealed {
+[data-reveal].is-visible {
   opacity: 1;
   transform: translateY(0);
 }
@@ -1561,7 +1573,7 @@ button, input, select {
   transform: scale(0.96);
 }
 
-[data-reveal="scale-in"].revealed {
+[data-reveal="scale-in"].is-visible {
   transform: scale(1);
 }
 
@@ -1569,7 +1581,7 @@ button, input, select {
   transform: translateX(30px);
 }
 
-[data-reveal="fade-left"].revealed {
+[data-reveal="fade-left"].is-visible {
   transform: translateX(0);
 }
 
